@@ -23,15 +23,15 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brasilia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4x-G8-tRF">
                                         <rect key="frame" x="0.0" y="0.0" width="242" height="157"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.39836994364418155" green="0.78959548704982419" blue="0.39926375607787101" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is the capital of Brazil?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjR-UR-oy9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is the capital of Brazil?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjR-UR-oy9">
                                         <rect key="frame" x="0.0" y="0.0" width="242" height="157"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="1" green="0.72011418453617226" blue="0.33713810491630691" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -43,23 +43,51 @@
                                     <outletCollection property="gestureRecognizers" destination="oV7-5u-B2A" appends="YES" id="I1K-qF-M8C"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcf-H2-ODV">
+                                <rect key="frame" x="86" y="520" width="242" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Rio De Janeiro"/>
+                                <connections>
+                                    <action selector="didTapOptnOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HPR-x6-pJ7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iv3-HQ-GPI">
+                                <rect key="frame" x="86" y="572" width="242" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Brasilia"/>
+                                <connections>
+                                    <action selector="didTapOptnTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9rN-Z2-Gqi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WC-1K-VAr">
+                                <rect key="frame" x="86" y="628" width="242" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sao Paulo"/>
+                                <connections>
+                                    <action selector="didTapOptionThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PM7-3E-HkK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="backLabel" destination="Q4x-G8-tRF" id="uaB-uB-6oG"/>
+                        <outlet property="butonThree" destination="5WC-1K-VAr" id="m8u-MG-4Jj"/>
+                        <outlet property="butonTwo" destination="Iv3-HQ-GPI" id="1wK-vX-IOo"/>
+                        <outlet property="buttonOne" destination="gcf-H2-ODV" id="LQ5-fa-oiA"/>
+                        <outlet property="card" destination="jkU-M6-P28" id="R0c-YH-sy8"/>
                         <outlet property="frontLabel" destination="pjR-UR-oy9" id="aRQ-7w-TCN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="oV7-5u-B2A">
                     <connections>
-                        <action selector="didTapOnFlashCard:" destination="BYZ-38-t0r" id="9ug-53-0cW"/>
+                        <action selector="didTapOnFlashCardAgain:" destination="BYZ-38-t0r" id="aoh-0t-djK"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="199" y="-101"/>
+            <point key="canvasLocation" x="198.55072463768118" y="-101.11607142857143"/>
         </scene>
     </scenes>
     <resources>
