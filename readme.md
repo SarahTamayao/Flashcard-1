@@ -9,7 +9,7 @@ This is basic flashcard app. You can toggle between the question and answer.
 Selecting the correct answer will reveal the answer while the wrong answers will not.
 
 
-<img src="gLAhTeL.gif", width=250 />
+<img src="https://i.imgur.com/gLAhTeL.gif" width=200><br>
 
 ## Required
 - [x] Create New Project in Xcode
