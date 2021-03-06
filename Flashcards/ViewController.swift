@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var butonThree: UIButton!
     
     
+    @IBOutlet weak var plusButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,8 @@ class ViewController: UIViewController {
         buttonOne.layer.cornerRadius = 20.0
         butonTwo.layer.cornerRadius = 20.0
         butonThree.layer.cornerRadius = 20.0
+        //add new formatting for plus button
+        
         
         buttonOne.layer.borderWidth = 3.0
         buttonOne.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
@@ -61,12 +65,22 @@ class ViewController: UIViewController {
         
         
     }
-
+    
+    
     @IBAction func didTapOnFlashCard(_ sender: Any) {
        
         frontLabel.isHidden = true
+        
+        
 
     }
+    
+    func updateFlashcard(Question : String, Answer : String) {
+        
+        
+    }
+    
+    
     
     
     @IBAction func didTapOnFlashCardAgain(_ sender: Any) {

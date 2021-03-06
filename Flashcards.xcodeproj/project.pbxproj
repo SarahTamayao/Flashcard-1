@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FEAF9C8D25F4115E00156FCF /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF9C8C25F4115E00156FCF /* CreationViewController.swift */; };
 		FEB24E1925E194DE00F9264B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB24E1825E194DE00F9264B /* AppDelegate.swift */; };
 		FEB24E1B25E194DE00F9264B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB24E1A25E194DE00F9264B /* SceneDelegate.swift */; };
 		FEB24E1D25E194DE00F9264B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB24E1C25E194DE00F9264B /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FEAF9C8C25F4115E00156FCF /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 		FEB24E1525E194DE00F9264B /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB24E1825E194DE00F9264B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEB24E1A25E194DE00F9264B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				FEB24E1A25E194DE00F9264B /* SceneDelegate.swift */,
 				FEB24E1C25E194DE00F9264B /* ViewController.swift */,
 				FEB24E1E25E194DE00F9264B /* Main.storyboard */,
+				FEAF9C8C25F4115E00156FCF /* CreationViewController.swift */,
 				FEB24E2425E194DF00F9264B /* Assets.xcassets */,
 				FEB24E2625E194DF00F9264B /* LaunchScreen.storyboard */,
 				FEB24E2925E194DF00F9264B /* Info.plist */,
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEAF9C8D25F4115E00156FCF /* CreationViewController.swift in Sources */,
 				FEB24E1D25E194DE00F9264B /* ViewController.swift in Sources */,
 				FEB24E1925E194DE00F9264B /* AppDelegate.swift in Sources */,
 				FEB24E2325E194DE00F9264B /* Flashcards.xcdatamodeld in Sources */,
