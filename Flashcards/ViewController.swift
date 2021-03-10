@@ -20,10 +20,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var plusButton: UIButton!
     
+        
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+        
+        
     
             
     //Card formatting
@@ -75,9 +81,18 @@ class ViewController: UIViewController {
 
     }
     
-    func updateFlashcard(Question : String, Answer : String) {
+    func updateFlashcard(Question : String, Answer : String, AlternateOne: String, AlternateTwo: String, AlternateThree: String) {
+        
+        frontLabel.text = Question
+        
+        backLabel.text = Answer
         
         
+        
+    
+        buttonOne.setTitle(AlternateOne, for: .normal)
+        butonTwo.setTitle(AlternateTwo, for: .normal)
+        butonThree.setTitle(AlternateThree, for: .normal)
     }
     
     
@@ -113,6 +128,27 @@ class ViewController: UIViewController {
     @IBAction func didTapOptionThree(_ sender: Any) {
         
         frontLabel.isHidden = false;
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let navigationController = segue.destination as! UINavigationController
+        
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        creationController.flashcardsController = self
+        
+        
+        if segue.identifier == "EditSegue"
+        {
+            
+            creationController.intialQuestion = frontLabel.text
+            creationController.initialAnswer = backLabel.text
+            
+        }
+        
+        
     }
     
     

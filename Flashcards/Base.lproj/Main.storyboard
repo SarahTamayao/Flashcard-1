@@ -36,6 +36,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTu-ib-ChB">
+                                        <rect key="frame" x="201" y="123" width="33" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="✏️"/>
+                                        <connections>
+                                            <segue destination="6oH-8C-4pw" kind="show" id="sr8-Kx-pnF"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
@@ -97,7 +105,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-236" y="-102"/>
+            <point key="canvasLocation" x="-236.23188405797103" y="-102.45535714285714"/>
         </scene>
         <!--Creation View Controller-->
         <scene sceneID="fSM-wd-KcW">
@@ -119,6 +127,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alternate answer #1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sih-8I-aeh">
+                                <rect key="frame" x="59" y="307" width="296" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alternate answer #2" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I7T-Cz-rYv">
+                                <rect key="frame" x="59" y="359" width="296" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alternate answer #3" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhj-TF-MKC">
+                                <rect key="frame" x="59" y="416" width="296" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xkR-WM-UhS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -129,17 +155,30 @@
                                 <action selector="didTapOnCancel:" destination="uzQ-C3-jz1" id="Dn0-LH-6Z8"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="V4d-3L-VII">
+                            <connections>
+                                <action selector="didTapOnDone:" destination="uzQ-C3-jz1" id="CBo-Cm-ysX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="answerLabel" destination="r2N-7Q-cID" id="S42-T3-fpw"/>
+                        <outlet property="extraAnswerOne" destination="Sih-8I-aeh" id="Cz2-eO-njD"/>
+                        <outlet property="extraAnswerThree" destination="bhj-TF-MKC" id="Lhl-2X-fly"/>
+                        <outlet property="extraAnswerTwo" destination="I7T-Cz-rYv" id="spY-Sv-qbm"/>
+                        <outlet property="questionLabel" destination="Sc8-Ae-d2s" id="2g9-zh-bOq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZP1-bq-TNG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1342.0289855072465" y="-102.45535714285714"/>
+            <point key="canvasLocation" x="1560.8695652173915" y="-102.45535714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZLE-tJ-cL5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6oH-8C-4pw" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="jYC-An-3qd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="472-Gg-2xi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -154,6 +193,9 @@
             <point key="canvasLocation" x="431.8840579710145" y="-102.45535714285714"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sr8-Kx-pnF"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
