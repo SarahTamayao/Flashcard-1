@@ -8,7 +8,6 @@ Amish Fakun - Flashcard app
 This app adds a creation screen. The flashcard can be updated and new questions along with the multiple choice answers can be added.
 
 ### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
 <img src="https://raw.githubusercontent.com/afakun/Flashcard/master/lab2_AmishFakun.gif" width=200><br>
 
