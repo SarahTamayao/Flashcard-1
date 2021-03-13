@@ -7,6 +7,13 @@
 
 import UIKit
 
+struct Flashcard
+{
+    var question: String
+    var answer: String
+}
+
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var backLabel: UILabel!
@@ -20,12 +27,24 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var plusButton: UIButton!
     
+    @IBOutlet weak var prevButton: UIButton!
+    
+    @IBOutlet weak var nextButton: UIButton!
+    
+    //Array to hold our flashcards
+    var flashcards = [Flashcard]()
+    
+    //current flashcard index
+    var currentIndex = 0 //initialize to zero since first index in array
+    
         
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        updateFlashcard(Question: "What's the capital of brazil", Answer: "brasilia", AlternateOne: "RDJ", AlternateTwo: "Brasilia", AlternateThree: "Sao Paulo")
         
         
         
@@ -83,16 +102,48 @@ class ViewController: UIViewController {
     
     func updateFlashcard(Question : String, Answer : String, AlternateOne: String, AlternateTwo: String, AlternateThree: String) {
         
-        frontLabel.text = Question
+        let flashcard = Flashcard(question: Question, answer: Answer)
         
-        backLabel.text = Answer
         
+        frontLabel.text = flashcard.question
+        backLabel.text = flashcard.answer
+        
+        flashcards.append(flashcard)
+        
+        //Console Logging
+        
+        currentIndex = flashcards.count - 1
+        
+        print("we now have \(flashcards.count) flashcards ")
+        print(" :] Our current index is \(currentIndex)")
+        
+
+        
+
         
         
     
         buttonOne.setTitle(AlternateOne, for: .normal)
         butonTwo.setTitle(AlternateTwo, for: .normal)
         butonThree.setTitle(AlternateThree, for: .normal)
+        
+        updateNextPrevButtons()
+    }
+    
+    
+    func updateNextPrevButtons()
+    {
+        
+        //Disable next button if reached end of array
+        if (currentIndex == flashcards.count - 1)
+        {
+            nextButton.isEnabled = false
+        }
+        
+        else
+        {
+            nextButton.isEnabled = true
+        }
     }
     
     
@@ -129,6 +180,20 @@ class ViewController: UIViewController {
         
         frontLabel.isHidden = false;
     }
+    
+    
+    
+    @IBAction func didTapOnPrev(_ sender: Any) {
+        
+        
+    }
+    
+    
+    
+    @IBAction func didTapOnNext(_ sender: Any) {
+        
+    }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
