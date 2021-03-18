@@ -44,8 +44,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        updateFlashcard(Question: "What's the capital of brazil", Answer: "brasilia", AlternateOne: "RDJ", AlternateTwo: "Brasilia", AlternateThree: "Sao Paulo")
+        readSavedFlashcards()
         
+        if (flashcards.count == 0)
+        {
+            
+            updateFlashcard(Question: "What's the capital of brazil", Answer: "brasilia", AlternateOne: "RDJ", AlternateTwo: "Brasilia", AlternateThree: "Sao Paulo")
+
+            
+        }
+        
+        else
+        {
+            updateLabels()
+            updateNextPrevButtons()
+        }
+        
+                
         
         
         
@@ -127,7 +142,14 @@ class ViewController: UIViewController {
         butonTwo.setTitle(AlternateTwo, for: .normal)
         butonThree.setTitle(AlternateThree, for: .normal)
         
+        //Update buttons
         updateNextPrevButtons()
+        
+        //Update Labels
+        updateLabels()
+        
+        //Save flashcard to disk
+        saveAllFlashcardsToDisk()
     }
     
     
@@ -139,12 +161,77 @@ class ViewController: UIViewController {
         {
             nextButton.isEnabled = false
         }
-        
+
         else
         {
             nextButton.isEnabled = true
         }
+        
+        if(flashcards.count == 1) //if currentIndex is of size 0 then it should mean that there is only one flashcard and we cannot go back
+        {
+            prevButton.isEnabled = false
+        }
+        else
+        {
+            prevButton.isEnabled = true
+        }
     }
+    
+    
+    func updateLabels()
+    {
+        //Get current flashcard
+        let currentFlashcard = flashcards[currentIndex]
+        
+        
+        //update labels
+        frontLabel.text = currentFlashcard.question
+        backLabel.text = currentFlashcard.answer
+    
+    }
+    
+    func saveAllFlashcardsToDisk ()
+    {
+        
+        let dictionaryArray = flashcards.map { (card) -> [String : String] in
+            
+            return["question" : card.question, "answer" : card.answer]
+        }
+        
+        
+        UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
+        
+        //Console Logging
+        print(">:) Flashcards saved to UserDefaults")
+        
+    }
+    
+    func readSavedFlashcards ()
+    {
+        
+        //Read dictionary array from disk (if any)
+        
+        if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String : String]]
+        {
+            //In here we know we have a dictionary array
+            
+            let savedCards = dictionaryArray.map { (dictionary) -> Flashcard in
+                
+                return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!)
+            }
+            
+            //put cards in flashcard array
+            flashcards.append(contentsOf: savedCards)
+            
+            
+        }
+        
+        
+        
+        
+    }
+    
+       
     
     
     
@@ -185,12 +272,30 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOnPrev(_ sender: Any) {
         
+        currentIndex = currentIndex - 1
+       
+        //update labels
+        updateLabels()
+        
+        //update buttons
+        updateNextPrevButtons()
+        
+        
+        
         
     }
     
     
     
     @IBAction func didTapOnNext(_ sender: Any) {
+        
+        currentIndex = currentIndex + 1
+        
+        //update labels
+        updateLabels()
+        
+        //update buttons
+        updateNextPrevButtons()
         
     }
     
