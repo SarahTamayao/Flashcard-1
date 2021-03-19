@@ -44,6 +44,14 @@
                                             <segue destination="6oH-8C-4pw" kind="show" id="sr8-Kx-pnF"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfO-MF-MO6">
+                                        <rect key="frame" x="8" y="8" width="23" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="❌"/>
+                                        <connections>
+                                            <action selector="didTapOnDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xKZ-qW-VPQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
@@ -110,6 +118,7 @@
                         <outlet property="butonTwo" destination="Iv3-HQ-GPI" id="1wK-vX-IOo"/>
                         <outlet property="buttonOne" destination="gcf-H2-ODV" id="LQ5-fa-oiA"/>
                         <outlet property="card" destination="jkU-M6-P28" id="R0c-YH-sy8"/>
+                        <outlet property="deleteButton" destination="ZfO-MF-MO6" id="0kK-f7-ciN"/>
                         <outlet property="frontLabel" destination="pjR-UR-oy9" id="aRQ-7w-TCN"/>
                         <outlet property="nextButton" destination="dDm-Uh-2fU" id="4rW-Ra-o8B"/>
                         <outlet property="plusButton" destination="gfU-h1-I53" id="feB-ku-Gfx"/>
@@ -123,7 +132,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-212" y="-102"/>
+            <point key="canvasLocation" x="-213.04347826086959" y="-102.45535714285714"/>
         </scene>
         <!--Creation View Controller-->
         <scene sceneID="fSM-wd-KcW">

@@ -34,9 +34,6 @@ class CreationViewController: UIViewController {
         questionLabel.text = intialQuestion
         answerLabel.text = initialAnswer
 
-       
-        
-        
         
     }
     
@@ -77,10 +74,15 @@ class CreationViewController: UIViewController {
         }
         else
         {
+            var isExisting = false
             
+            if intialQuestion != nil
+            {
+                isExisting = true
+            }
         
             
-            flashcardsController.updateFlashcard(Question: questionText!, Answer: answerText!, AlternateOne: extraAnswerOne.text!, AlternateTwo: extraAnswerTwo.text!, AlternateThree: extraAnswerThree.text!)
+            flashcardsController.updateFlashcard(Question: questionText!, Answer: answerText!, AlternateOne: extraAnswerOne.text!, AlternateTwo: extraAnswerTwo.text!, AlternateThree: extraAnswerThree.text!, isExisting: isExisting)
             
             dismiss(animated: true)
             
